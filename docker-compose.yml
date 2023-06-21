@@ -5,7 +5,7 @@ services:
     #image: docker.io/bitnami/odoo:16
     env_file: .env
     build: 
-      context: .
+      context: ./dockerfile-config
       dockerfile: od.dockerfile
     platform: linux/arm64
     depends_on:
@@ -23,7 +23,7 @@ services:
     #image: docker.io/bitnami/postgresql:15
     env_file: .env
     build:
-      context: .
+      context: ./dockerfile-config
       dockerfile: pg.dockerfile
     ports:
       - '5432:5432'
