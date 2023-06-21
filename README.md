@@ -15,7 +15,9 @@
 - `docker exec -it <container_code> psql -U postgres`
 - look user `\du`, look database `\l`, to quit `\q`
 
-
+## Create New Login/New Database (from Odoo)
+- Click `manage database`
+- Master Password `bitnami`
 
 ## Reference:
 https://linuxhint.com/install-odoo-15-ubuntu-22-04/
