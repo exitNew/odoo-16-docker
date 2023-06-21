@@ -1,6 +1,6 @@
 # Odoo 16
 
-## User Default Login Odoo:
+## User Default Login Bitnami Odoo:
 - user: `user@example.com`
 - password: `bitnami`
 
@@ -12,7 +12,10 @@
 - `apt install libsasl2-dev python-dev libldap2-dev libssl-dev`
 
 ## Setup Postgres
-`docker exec -it <container_code> psql -U postgres`
+- `docker exec -it <container_code> psql -U postgres`
+- look user `\du`, look database `\l`, to quit `\q`
+
+
 
 ## Reference:
 https://linuxhint.com/install-odoo-15-ubuntu-22-04/
