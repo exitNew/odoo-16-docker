@@ -15,7 +15,7 @@ services:
       - '127.0.0.1:5678:5678'
     volumes:
       - ./addons:/mnt/extra-addons
-        #- ./etc:/bitnami/odoo/conf
+      - ./etc:/bitnami/odoo/conf
       - ./odoo-data:/var/lib/odoo
 
   postgresql:
