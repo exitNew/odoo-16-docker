@@ -7,7 +7,7 @@ services:
     build: 
       context: ./dockerfile-config
       dockerfile: amd.od.dockerfile
-    platform: linux/arm64 # change this to linux/amd64 or linux/arm64
+    platform: linux/amd64 # change this to linux/amd64 or linux/arm64
     depends_on:
       - postgresql
     ports:
@@ -26,7 +26,7 @@ services:
       context: ./dockerfile-config
       dockerfile: pg.dockerfile
     ports:
-      - '5432:5432'
+      - '54321:5432'
     volumes:
       - postgresql_data:/bitnami/postgresql
 volumes:
