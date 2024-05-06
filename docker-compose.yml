@@ -2,12 +2,12 @@ version: '3'
 services:
   odoo:
     container_name: odoo
-    #image: docker.io/bitnami/odoo:16 # pull without dockerfile
+    #image: docker.io/bitnami/odoo:16
     env_file: .env
     build: 
       context: ./dockerfile-config
-      dockerfile: amd.od.dockerfile
-    platform: linux/amd64 # change this to linux/amd64 or linux/arm64
+      dockerfile: arm.od.dockerfile
+    platform: linux/arm64
     depends_on:
       - postgresql
     ports:
@@ -20,7 +20,7 @@ services:
 
   postgresql:
     container_name: postgres
-    #image: docker.io/bitnami/postgresql:15 # pull without dockerfile
+    #image: docker.io/bitnami/postgresql:15
     env_file: .env
     build:
       context: ./dockerfile-config
