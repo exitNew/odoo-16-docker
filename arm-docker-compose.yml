@@ -1,0 +1,36 @@
+version: '3'
+services:
+  odoo:
+    container_name: odoo
+    #image: docker.io/bitnami/odoo:16
+    env_file: .env
+    build: 
+      context: ./dockerfile-config
+      dockerfile: od.dockerfile
+    platform: linux/arm64
+    depends_on:
+      - postgresql
+    ports:
+      - '127.0.0.1:8069:8069'
+      - '127.0.0.1:5678:5678'
+    volumes:
+      - ./addons:/mnt/extra-addons
+      - ./etc:/bitnami/odoo/conf
+      - ./odoo-data:/var/lib/odoo
+
+  postgresql:
+    container_name: postgres
+    #image: docker.io/bitnami/postgresql:15
+    env_file: .env
+    build:
+      context: ./dockerfile-config
+      dockerfile: pg.dockerfile
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgresql_data:/bitnami/postgresql
+volumes:
+  odoo_data:
+    driver: local
+  postgresql_data:
+    driver: local
