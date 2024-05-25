@@ -15,7 +15,6 @@ services:
     volumes:
       - ./addons:/mnt/extra-addons
       - ./etc:/bitnami/odoo/conf
-      - ./odoo-data:/var/lib/odoo
 
   postgresql:
     container_name: postgres
