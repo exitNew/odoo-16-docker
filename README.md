@@ -1,6 +1,14 @@
 # Odoo 16
 
+Tested on Macbook ARM M1 processor, as per this commit.
+- Python 3.11.9
+- Postgres 15
+- Odoo 16
+
+## Setting 
 - Change env-example to .env
+- etc/odoo.conf is needed, to point to /mnt/extra-addons. Check default bitnami for more option. unfortunately there is nothing like odoo cli.
+- add your addons to addons folder. Create one on root app dir
 
 ## User Default Login Bitnami Odoo:
 
@@ -11,10 +19,12 @@
 
 `docker-compose up -d`
 
+open `localhost:8069/web`
+
 ## Stop Docker
 
-- If want to reuse the container `docker stop <container_id>`
-- If delete permanent container `docker-compose down`
+- Stop to reuse later `docker stop <container_id>`
+- Delete permanent `docker-compose down`
 
 ## Purge Docker Container
 
@@ -22,6 +32,8 @@
 - `docker image rm <image id>`
 
 ## Dependencies (optional: inside "docker exec")
+
+Only need this if odoo want wkhtmltopdf
 
 - `apt install build-essential`
 - `apt install wheels`
@@ -35,6 +47,13 @@
 - look user `\du`, look database `\l`, to quit `\q`
 - select database `\c`
 - look table `\dt`
+
+Or Just download DBeaver and connect
+as per env-example
+host:localhost
+port:54321
+username:bn_odoo
+password:bitnami_odoo
 
 ## Create New Login/New Database (from Odoo)
 
