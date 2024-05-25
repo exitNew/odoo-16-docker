@@ -6,7 +6,7 @@ services:
     env_file: .env
     build: 
       context: ./dockerfile-config
-      dockerfile: arm.od.dockerfile
+      dockerfile: arm.od.dockerfile # change this to linux/amd64 or linux/arm64
     platform: linux/arm64
     depends_on:
       - postgresql

@@ -1,5 +1,7 @@
 # Odoo 16
 
+- Change env-example to .env
+
 ## User Default Login Bitnami Odoo:
 
 - user: `user@example.com`
@@ -16,9 +18,10 @@
 
 ## Purge Docker Container
 
-- `docker 
+- `docker container rm <image id>`
+- `docker image rm <image id>`
 
-## Dependencies (optional)
+## Dependencies (optional: inside "docker exec")
 
 - `apt install build-essential`
 - `apt install wheels`
@@ -30,6 +33,8 @@
 
 - `docker exec -it <container_id> psql -U postgres`
 - look user `\du`, look database `\l`, to quit `\q`
+- select database `\c`
+- look table `\dt`
 
 ## Create New Login/New Database (from Odoo)
 
@@ -38,9 +43,12 @@
 
 ## Log tailing
 
-`docker logs --folow <container_id>`
+- `docker logs --folow <container_id>`
+
+## Build with no cache
+
+- `docker-compose build --no-cache`
 
 ## Reference:
-
 https://linuxhint.com/install-odoo-15-ubuntu-22-04/
 

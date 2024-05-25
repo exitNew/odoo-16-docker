@@ -9,5 +9,5 @@ COPY requirements.txt /tmp/requirements.txt
 WORKDIR /tmp
 RUN pip3 install -r requirements.txt
 
-# Installing Optional Dependency
+# Your optional dependency
 RUN pip3 install pandas python-jose pyjwt python-dotenv
